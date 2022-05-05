@@ -1,89 +1,116 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title> Mitchell's Resume</title>
-        <link href="styles/resumeStyles.css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com"> 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;700&display=swap" rel="stylesheet">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kristi&display=swap" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="Authoer" content="Mitchell MacDonald">
+    <title> Mitchell's Resume</title>
+    <link href="styles/resumeStyles.css" rel="stylesheet">
+    <link href="styles/resumeStyles2.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;700&display=swap" rel="stylesheet">
 
-    <body>
-        <h1 id="MyName"> Mitchell MacDonald</h1> 
-        <h2> Faculty of Software Engineering</h2>
-        <p id="header"> Education</p>
-        <ul id="EducationList">
-            <li id="startList">September 2020-present</li>
-                <li><ul id="UNBList">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kristi&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1 id="MyName"> Mitchell MacDonald</h1>
+    <h2> Faculty of Software Engineering</h2>
+
+    <p class="header"> Education</p>
+    <table>
+        <tr>
+            <th id="hiddenBackgroundPhoto"> September 2020-present</th>
+            <td>
+                <ul>
                     <li>Bacholor of Science in Software Engineering</li>
                     <li>Fredericton, New Brunswick</li>
                     <li>Current GPA: 4.2</li>
-                    </ul> </li>
-                
-                    <li> &nbsp;</li>
-                    <li> &nbsp;</li>
-                    <li> &nbsp;</li>
+                </ul>
+            </td>
+        </tr>
 
-
-                <li id="startSchool"> June 2020</li>
-                    <li><ul id="schoolList"> 
-                        <li>Fredericton High School </li>
-                    </ul></li>
-                <li> &nbsp;</li>
-        </ul>
-
-        <p id="header">Work Experience</p>
-        <ul id="ExperienceList">
-            <li>September 2021 - December 2021</li>
-            <li> <pre> GlobalVision </pre></li>
-            <li><ul id="GlobalVisionList">
+        <tr>
+            <th>June 2020 </th>
+            <td>
+                <ul>
+                    <li>Fredericton High School </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <p class="header">Work Experience</p>
+    <ul class="outerList">
+        <li>September 2021 - December 2021</li>
+        <li>
+            <pre> GlobalVision </pre>
+        </li>
+        <li>
+            <ul id="GlobalVisionList">
                 <li>Used Selenium Java to create automated tests for websites</li>
                 <li>Worked remotely and mostly independently; however, occasionally worked on a team</li>
-            </ul></li>
-        </ul>
+            </ul>
+        </li>
+    </ul>
 
-        <p id="header">Personal Projects</p>
-        <ul id="personalProjects">
-            <li>Built my own computer</li>
-            <li><ul id="ComputerList">
+    <p class="header">Personal Projects</p>
+    <ul class="outerList">
+        <li>Built my own computer</li>
+        <li>
+            <ul id="ComputerList">
                 <li>Researched the parts</li>
                 <li>Assembled the components</li>
                 <li>Loaded the operating system</li>
-            </ul></li>
-        </ul>
+            </ul>
+        </li>
+    </ul>
 
 
-        <p id="header">School Experience</p>
-        <ul id="schoolExperience">
-            <li id="startCS1303">Januray 2021 - April 2021</li>
-            <li><ul id="cs1303">
-                <li>CS1303</li>
-                <li>Learned how to use SQL. Creating databases, queries, and stored procedures.</li>
-                <li>Created some Java projects that interacted with a database</li>
-                <li>Interacted with a Linux environment</li>
+    <p class="header">School Experience</p>
+    <table>
+        <tr>
+            <th>
+                Januray 2021 - April 2021
+            </th>
+            <td>
+                <ul id="cs1303">
+                    <li>CS1303</li>
+                    <li>Learned how to use SQL. Creating databases, queries, and stored procedures.</li>
+                    <li>Created some Java projects that interacted with a database</li>
+                    <li>Interacted with a Linux environment</li>
+                </ul>
+            </td>
 
-            </ul></li>
-            <li> &nbsp;</li>
-            <li> &nbsp;</li>
-            <li> &nbsp;</li>
-        </ul>
-        <p id="header">Skills</p>
-        <p><strong>Programming Skills: </strong> <id id="skillsText">Java, C, Racket, JavaScript, Python, MatLab, Selenium</id></p>
-        <p><strong>Operating Systems: </strong> Windows 10, linux</p>
-        <p id="header">Hobbies and Extra Curricular Activities</p>
-        <ul id="hobbiesList">
-            <li id="baking">Baking</li>
-            <li>Biking</li>
-            <li>Video Games</li>
-            <li>Positive Action Committee (2018)</li>
-        </ul>
-        <img src="images/cake.jpg" id="cakePic" alt="Blank Space">
+        </tr>
 
-        <script src="scripts/resume.js"></script>
-    </body>
+    </table>
+    <p class="header">Skills</p>
+    <p><strong>Programming Skills: </strong>
+        <id id="skillsText">Java, C, Racket, JavaScript, Python, MatLab, Selenium</id>
+    </p>
+    <p><strong>Operating Systems: </strong> Windows 10, linux</p>
+    <p class="header">Hobbies and Extra Curricular Activities</p>
+    <ul class="outerList">
+        <li id="baking">Baking</li>
+        <li>Biking</li>
+        <li>Video Games</li>
+        <li>Positive Action Committee (2018)</li>
+    </ul>
+
+    <div id="addTextHere">
+
+    </div>
+    <img src="images/cake.jpg" id="cakePic" alt="Blank Space">
+
+    <a target="_blank" href="OtherPages/testHTML.html" title="Link to my testing html">
+        <h3>Hello There</h3>
+    </a>
+    <script src="scripts/resume.js"></script>
+    <script src="scripts/startUp.js"></script>
+
+</body>
+
 </html>

@@ -5,10 +5,10 @@ myHeading.textContent = 'test';
 
 myImage.onclick = function() {
     let mySrc = myImage.getAttribute('src');
-    if(mySrc === 'images/landscape.jpeg') {
-      myImage.setAttribute('src','images/test.png');
+    if(mySrc === '../images/landscape.jpeg') {
+      myImage.setAttribute('src','../images/test.png');
     } else {
-      myImage.setAttribute('src','images/landscape.jpeg');
+      myImage.setAttribute('src','../images/landscape.jpeg');
     }
 }
 

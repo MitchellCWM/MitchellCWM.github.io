@@ -10,7 +10,7 @@ getProgrammingSkillsBoldEle = function(){
 
 updateHTMLCss = function(newStyle){
     let temp = document.querySelector('html');
-    tempStyle = temp.getAttribute('style')
+    tempStyle = temp.getAttribute('style');
     console.log(tempStyle);
     temp.setAttribute('style', tempStyle + ';\n' + newStyle);
 }
@@ -21,12 +21,14 @@ setSillyFont = function(){
 
 let bakingText = document.getElementById('baking');
 let cake = document.getElementById('cakePic');
+//cake.style.borderBlock
 let programmingSkillsBold = getProgrammingSkillsBoldEle();
 let programmingSkillsText = document.getElementById('skillsText');
 
 let myName = document.getElementById('MyName');
-let date = document.getElementById('startList');
+let date = document.getElementById('hiddenBackgroundPhoto');
 
+let award = document.getElementById('addTextHere');
 
 bakingText.onclick = () =>{
     cake.setAttribute('style', 'visibility:visible');
@@ -50,3 +52,13 @@ programmingSkillsBold.onmouseleave = function(){
 
 
 myName.addEventListener('click', setSillyFont);
+
+award.onclick = function(){
+    let newAward = prompt("Add new awards");
+    let newListItem = document.createElement("li");
+    newListItem.appendChild(document.createTextNode(newAward));
+
+    let awardsList = document.getElementById("awardsList");
+    awardsList.appendChild(newListItem);
+
+}
