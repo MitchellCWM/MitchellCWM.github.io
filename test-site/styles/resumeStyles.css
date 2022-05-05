@@ -1,0 +1,51 @@
+
+html{
+    font-family: 'Lato', sans-serif;
+    background-color: black;
+    text-size-adjust: 25px;
+}
+body{
+    width: 800px;
+    margin: 10px auto; /*The space around the border*/
+    background-color: #ffffff;
+    padding: 0 20px 20px 20px; /*space around the text (0px at the top, 20 to the right, bottom and left*/
+    border: 5px solid black; /*creates a solid line around the text*/
+    text-align: left;
+    
+}
+#MyName,h2{
+    text-align: center;
+    text-emphasis: 1;
+    font-weight: bold;
+}
+
+#EducationList, #ExperienceList,#personalProjects,#schoolExperience{
+    float:none;
+    list-style: none;
+    text-align: left;
+}
+#UNBList,#schoolList{
+    list-style: circle;
+    text-align: left;
+}
+
+#UNBList, #startList{
+    float:left;
+}
+
+#schoolList, #startSchool{
+    float:left;
+}
+#startCS1303, #cs1303{
+    float:left;
+}
+#header{
+    font-weight: bold;
+    padding: 20px 5px 5px 5px;
+}
+#cakePic{
+    visibility: hidden;
+    list-style: none;
+    width: 750px;
+    border: 10px dashed #391ed1;
+}
