@@ -56,7 +56,8 @@ myName.addEventListener('click', setSillyFont);
 award.onclick = function(){
     let newAward = prompt("Add new awards");
     let newListItem = document.createElement("li");
-    newListItem.appendChild(document.createTextNode(newAward));
+    newListItem.textContent = newAward;
+   // newListItem.appendChild(document.createTextNode(newAward));
 
     let awardsList = document.getElementById("awardsList");
     awardsList.appendChild(newListItem);

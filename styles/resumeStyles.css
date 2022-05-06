@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    width: 800px;
+    width: 60%;
     margin: 10px auto;
     /*The space around the border*/
     background-color: #ffffff;
@@ -13,11 +13,17 @@ body {
     /*space around the text (0px at the top, 20 to the right, bottom and left*/
     border: 5px solid black;
     /*creates a solid line around the text*/
-    text-align: left;
+
 }
 table{
     clear:both;
 }
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
+  }
 .bulletText{
     display: list-item;
 }
@@ -32,6 +38,7 @@ h2 {
     text-align: center;
     text-emphasis: 1;
     font-weight: bold;
+    word-wrap: break-word;
 }
 
 .outerList {
@@ -67,8 +74,8 @@ h2 {
 #cakePic {
     visibility: hidden;
     list-style: none;
-    width: 750px;
-    border: 10px dashed #391ed1;
+    width: 100%;
+    border: dashed #391ed1;
     cursor: pointer;
 }
 

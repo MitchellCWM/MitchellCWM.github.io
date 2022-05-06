@@ -1,25 +1,24 @@
+window.onload = function () {
+    console.log("Hello");
+}
+let awardsHeader = document.createElement("p");
+awardsHeader.setAttribute('class', 'header');
+let textText = document.createTextNode("Acedemic Awards");
 
-    let awardsHeader = document.createElement("p");
-    awardsHeader.setAttribute('class', 'header');
-    let textText = document.createTextNode("Acedemic Awards");
+awardsHeader.appendChild(textText);
 
-    awardsHeader.appendChild(textText);
+let body = document.getElementById('addTextHere');
+body.appendChild(awardsHeader);
 
-    let body = document.getElementById('addTextHere');
-    body.appendChild(awardsHeader);
+let awardsList = document.createElement("ul");
+awardsList.setAttribute("id", "awardsList");
 
-    let awardsList = document.createElement("ul");
-    awardsList.setAttribute("id", "awardsList");
-
-    let listElement = document.createElement("li");
-    listElement.appendChild(document.createTextNode("Erwin Jocab Award"));
-    awardsList.appendChild(listElement);
-
-
-    listElement = document.createElement("li");
-    listElement.appendChild(document.createTextNode("Computer Science Awards"));
-    awardsList.appendChild(listElement);
-    body.appendChild(awardsList);
+let listElement = document.createElement("li");
+listElement.textContent = "Erwin Jocab Award";
+awardsList.appendChild(listElement);
 
 
-
+listElement = document.createElement("li");
+listElement.textContent = "Computer Science Awards";
+awardsList.appendChild(listElement);
+body.appendChild(awardsList);
