@@ -4,17 +4,14 @@ html {
     text-size-adjust: 25px;
     background-attachment: fixed;
 }
-
-body {
+.wrapper{
+    display: flex;
+}
+.main{
     width: 60%;
-    margin: 10px auto;
-    /*The space around the border*/
-    background-color: #ffffff;
-    padding: 0 20px 20px 20px;
-    /*space around the text (0px at the top, 20 to the right, bottom and left*/
-    border: 5px solid black;
-    /*creates a solid line around the text*/
-
+    background-color: white;
+    padding: 2%;
+    align-content: center;
 }
 table{
     clear:both;
@@ -82,4 +79,14 @@ h2 {
 
 #baking {
     cursor: pointer;
+}
+
+
+.tableHeader,td{
+    text-align: left;
+    vertical-align: top;
+    
+}
+ul{
+    margin-top: 0;
 }

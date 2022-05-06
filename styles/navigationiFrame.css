@@ -1,0 +1,22 @@
+.navigationPane{
+    color: rgb(71, 46, 46);
+    height: auto;
+    width: 75%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:greenyellow;
+    text-align: center;
+    padding-bottom: 5%; /* the padding is 5% of the sidebar (direct parent element) width */
+}
+
+.navigationList{
+    text-align: left;
+    list-style-type:square;
+}
+
+/*testing innner table styles*/
+
+.disabledLink{
+    pointer-events: none;
+    text-decoration: none;
+
+}

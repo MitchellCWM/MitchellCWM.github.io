@@ -57,7 +57,6 @@ award.onclick = function(){
     let newAward = prompt("Add new awards");
     let newListItem = document.createElement("li");
     newListItem.textContent = newAward;
-   // newListItem.appendChild(document.createTextNode(newAward));
 
     let awardsList = document.getElementById("awardsList");
     awardsList.appendChild(newListItem);
