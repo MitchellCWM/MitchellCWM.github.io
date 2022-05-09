@@ -4,6 +4,12 @@ html {
     text-size-adjust: 25px;
     background-attachment: fixed;
 }
+
+@media screen  and (min-width: 1000px){
+ html{
+     background-color: blueviolet;
+ }
+}
 .wrapper{
     display: flex;
 }
@@ -12,6 +18,18 @@ html {
     background-color: white;
     padding: 2%;
     align-content: center;
+}
+.header{
+    width: 100%;
+    position: sticky;
+    padding-top: 1%;
+    padding-bottom: 5px;
+    top:0px;
+    background-color: white;
+}
+.fixedElement{
+    position: fixed;
+    width: inherit;
 }
 table{
     clear:both;
@@ -25,7 +43,7 @@ pre {
 .bulletText{
     display: list-item;
 }
-.header {
+.subtitle {
     font-weight: bold;
     padding: 20px 5px 5px 5px;
     clear: both;
@@ -75,6 +93,8 @@ h2 {
     width: 100%;
     border: dashed #391ed1;
     cursor: pointer;
+    position: sticky;
+    bottom: 30px;
 }
 
 #baking {
@@ -89,4 +109,11 @@ h2 {
 }
 ul{
     margin-top: 0;
+}
+
+#MyName{
+    position: sticky;
+    top: 30px;
+    background-color: aquamarine;
+    vertical-align: center;
 }

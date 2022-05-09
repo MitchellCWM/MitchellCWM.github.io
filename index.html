@@ -19,24 +19,28 @@
 </head>
 
 <body>
-    <div class="wrapper"> 
+    <div class="wrapper">
         <div class="sideBar">
-            <nav class="navigationPane">
-                <h3>HomePage Navigation</h3>
-                <ul class="navigationList">
-                    <li><a href="index.html" id="resumeLink">Resume</a>
-                    </li>
-                    <li><a href="OtherPages/testHTML.html" id="randomLink">Random Test Page</a></li>
+            <div class="fixedElement">
+                <nav class="navigationPane">
 
-                </ul>
+                    <h3>HomePage Navigation</h3>
+                    <ul class="navigationList">
+                        <li><a href="index.html" id="resumeLink">Resume</a>
+                        </li>
+                        <li><a href="OtherPages/testHTML.html" id="randomLink">Random Test Page</a></li>
 
+                    </ul>
+            </div>
             </nav>
         </div>
         <div class="main">
-            <h1 id="MyName"> Mitchell MacDonald</h1>
+            <div class="header">
+                <h1 id="MyName"> Mitchell MacDonald</h1>
+            </div>
             <h2> Faculty of Software Engineering</h2>
 
-            <p class="header"> Education</p>
+            <p class="subtitle"> Education</p>
             <table>
                 <tr>
                     <th class="tableHeader" id="hiddenBackgroundPhoto"> September 2020-present</th>
@@ -58,7 +62,7 @@
                     </td>
                 </tr>
             </table>
-            <p class="header">Work Experience</p>
+            <p class="subtitle">Work Experience</p>
             <ul class="outerList">
                 <li>September 2021 - December 2021</li>
                 <li>
@@ -72,7 +76,7 @@
                 </li>
             </ul>
 
-            <p class="header">Personal Projects</p>
+            <p class="subtitle">Personal Projects</p>
             <ul class="outerList">
                 <li>Built my own computer</li>
                 <li>
@@ -85,7 +89,7 @@
             </ul>
 
 
-            <p class="header">School Experience</p>
+            <p class="subtitle">School Experience</p>
             <div class="wrapper">
                 <div class="tableHeader">
                     Januray 2021 - April 2021
@@ -98,12 +102,12 @@
                     <li>Interacted with a Linux environment</li>
                 </ul>
             </div>
-            <p class="header">Skills</p>
+            <p class="subtitle">Skills</p>
             <p><strong>Programming Skills: </strong>
                 <id id="skillsText">Java, C, Racket, JavaScript, Python, MatLab, Selenium</id>
             </p>
             <p><strong>Operating Systems: </strong> Windows 10, linux</p>
-            <p class="header">Hobbies and Extra Curricular Activities</p>
+            <p class="subtitle">Hobbies and Extra Curricular Activities</p>
             <ul class="outerList">
                 <li id="baking">Baking</li>
                 <li>Biking</li>
