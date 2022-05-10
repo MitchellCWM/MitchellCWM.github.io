@@ -2,7 +2,7 @@ window.onload = function () {
     console.log("Hello");
 }
 let awardsHeader = document.createElement("p");
-awardsHeader.setAttribute('class', 'header');
+awardsHeader.setAttribute('class', 'subtitle');
 let textText = document.createTextNode("Acedemic Awards");
 
 awardsHeader.appendChild(textText);

@@ -7,8 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Authoer" content="Mitchell MacDonald">
     <title>Mitchell's Resume</title>
+
+    <script src="https://kit.fontawesome.com/d485f12393.js" crossorigin="anonymous"></script>
     <link href="styles/resumeStyles.css" rel="stylesheet">
     <link href="styles/resumeNavigation.css" rel="stylesheet">
+    <link href="styles/resumeMobile.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;700&display=swap" rel="stylesheet">
@@ -22,7 +25,10 @@
     <div class="wrapper">
         <div class="sideBar">
             <div class="fixedElement">
-                <nav class="navigationPane">
+                <div class="hamburgerMenu">
+                    <button><i class="fa-solid fa-bars"></i></button>
+                </div>
+                <nav class="navigationPane" id="navMenu">
 
                     <h3>HomePage Navigation</h3>
                     <ul class="navigationList">
@@ -31,8 +37,10 @@
                         <li><a href="OtherPages/testHTML.html" id="randomLink">Random Test Page</a></li>
 
                     </ul>
+                </nav>
+                
             </div>
-            </nav>
+            
         </div>
         <div class="main">
             <div class="header">

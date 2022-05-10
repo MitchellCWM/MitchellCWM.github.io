@@ -1,0 +1,34 @@
+@media screen  and (max-width: 880px){
+    html{
+        background-color: white;
+    }
+    body{
+        margin: 0;
+    }
+    .wrapper{
+        flex-direction: column;
+    }
+    .fixedElement{
+        background-color: greenyellow;
+        visibility: hidden;
+    }
+    .sideBar{
+        width: 5%;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+    
+    }
+    .hamburgerMenu{
+        visibility: visible;
+    }
+    .navigationPane{
+        visibility: hidden;
+        width:  100%;
+        margin: 0;
+    }
+    .main{
+        width: 94%;
+    }
+   }
+
