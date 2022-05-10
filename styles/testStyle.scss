@@ -1,0 +1,59 @@
+html {
+    font-family:  Lato, sans-serif;
+    background-color: black;
+    text-size-adjust: 25px;
+    background-attachment: fixed;
+}
+
+@media screen  and (min-width: 1000px){
+ html{
+     background-color: blueviolet;
+ }
+}
+
+
+.wrapper{
+    display: flex;
+}
+.main{
+    width: 60%;
+    background-color: white;
+    padding: 2%;
+    align-content: center;
+}
+.header{
+    width: 100%;
+    position: sticky;
+    padding-top: 1%;
+    padding-bottom: 5px;
+    top:0px;
+    background-color: white;
+}
+.fixedElement{
+    position: fixed;
+    width: inherit;
+}
+
+ul{
+    margin-top: 0;
+}
+
+.navigation{
+    width: 20%;
+}
+
+.fixedElement{
+    height: 100%;
+}
+iframe{
+    border: none;
+}
+
+h1{
+    text-align: center;
+    font-weight: bold;
+}
+
+img{
+    width: 100%;
+}
