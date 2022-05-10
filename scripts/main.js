@@ -1,6 +1,12 @@
 let myImage = document.querySelector('img');
 let myButton = document.querySelector('button');
 let myHeading = document.querySelector('h1');
+
+let menu = document.getElementsByClassName("mobileMenu--text");
+menu = menu[0];
+
+let navigation = document.getElementsByClassName("navigation");
+navigation = navigation[0];
 myHeading.textContent = 'test';
 
 myImage.onclick = function() {
@@ -33,4 +39,8 @@ function setUserName() {
 
   myButton.onclick = function() {
       setUserName()
+  }
+
+  menu.onclick = function(){
+      navigation.setAttribute('class', 'activeMenu');
   }

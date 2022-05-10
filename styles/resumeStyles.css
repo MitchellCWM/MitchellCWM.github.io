@@ -5,11 +5,7 @@ html {
     background-attachment: fixed;
 }
 
-@media screen  and (min-width: 1000px){
- html{
-     background-color: blueviolet;
- }
-}
+
 .wrapper{
     display: flex;
 }

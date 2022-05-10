@@ -5,59 +5,116 @@ html {
   background-attachment: fixed;
 }
 
-@media screen and (min-width: 1000px) {
-  html {
-    background-color: blueviolet;
-  }
-}
 .wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-template-rows: minmax(10%, 60px) 1fr minmax(5%, 40px);
+  column-gap: 5vw;
 }
 
 .main {
-  width: 60%;
+  grid-column: 1/3;
+  grid-row-start: 2;
+  width: 85%;
+  height: 100%;
   background-color: white;
-  padding: 2%;
   align-content: center;
+  padding: 7.5%;
+  padding-bottom: 0;
 }
 
 .header {
+  grid-column: 1/3;
+  grid-row: 1/2;
   width: 100%;
+  text-align: center;
+  background-color: blueviolet;
+}
+
+.navigation {
   position: sticky;
-  padding-top: 1%;
-  padding-bottom: 5px;
-  top: 0px;
-  background-color: white;
+  top: 20px;
+  visibility: hidden;
+  grid-column: 1/2;
+  grid-row: 2/4;
+  background-color: aquamarine;
+  height: fit-content;
 }
 
 .fixedElement {
   position: fixed;
-  width: inherit;
-}
-
-ul {
-  margin-top: 0;
-}
-
-.navigation {
-  width: 20%;
-}
-
-.fixedElement {
-  height: 100%;
-}
-
-iframe {
-  border: none;
-}
-
-h1 {
-  text-align: center;
-  font-weight: bold;
+  width: 95%;
+  border: 0px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 img {
   width: 100%;
+  height: 100%;
+}
+
+footer {
+  width: 100%;
+  height: 100%;
+  grid-column: 1/3;
+  grid-row-start: 3;
+  background-color: aquamarine;
+  position: sticky;
+  bottom: 0px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.mobileMenu--text {
+  font-size: 2em;
+}
+
+.activeMenu {
+  grid-area: 1/1/3/3;
+  height: 100%;
+  visibility: visible;
+  background-color: aquamarine;
+  z-index: 1;
+}
+
+iframe {
+  border: 0px;
+}
+
+@media screen and (min-width: 1000px) {
+  html {
+    background-color: blueviolet;
+  }
+
+  .wrapper {
+    grid-template-columns: 2fr 4fr 0.5fr;
+  }
+
+  .fixedElement {
+    position: sticky;
+    top: 0px;
+  }
+
+  .main {
+    grid-column: 2/3;
+  }
+
+  footer {
+    visibility: hidden;
+  }
+
+  .navigation {
+    visibility: visible;
+  }
+}
+.imageContainer {
+  height: 75vh;
+  width: calc(20% + 30vw);
 }
 
 /*# sourceMappingURL=testStyle.css.map */

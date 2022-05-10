@@ -7,20 +7,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../styles/testStyle.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d485f12393.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div class="wrapper">
     <div class="navigation">
       <div class="fixedElement">
-      <iframe src="navigationFrame.html" width="100%" height="100%">
-      </iframe>
+        <iframe src="navigationFrame.html">
+        </iframe>
       </div>
     </div>
-    <div class="main">
+    <div class="header">
       <h1> first heading</h1>
+    </div>
+    <div class="main">
+
       <h2 id="testId"> second heading</h2>
-      <img src="../images/test.png" alt="My test image">
+      <div class="imageContainer">
+        <img src="../images/test.png" alt="My test image">
+      </div>
       <h3> below the image</h3>
       <p> Not a lot of text, but there is a list. List</p>
       <ul>
@@ -33,12 +39,24 @@
       </p>
       <button>Change user</button>
 
-      <svg width="300" height="200">
-        <rect width="100%" height="100%" fill="black" />
-        <circle cx="150" cy="100" r="90" fill="blue" />
-        <!-- cx and cy are for the cartisian points-->
-      </svg>
+
+      <div class="imageContainer">
+        <svg width="100%" height="100%">
+          <rect width="100%" height="100%" fill="black" />
+          <circle cx="50%" cy="50%" r="90" fill="blue" />
+
+          <!-- cx and cy are for the cartisian points-->
+        </svg>
+      </div>
     </div>
+    <footer>
+      <div class="mobileMenuBar">
+        <div class="mobileMenu--text">
+          <i class="fa-solid fa-compass"></i>
+          Menu
+        </div>
+      </div>
+    </footer>
   </div>
   <script src="../scripts/main.js"></script>
 </body>
