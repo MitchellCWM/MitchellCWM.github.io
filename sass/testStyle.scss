@@ -10,7 +10,7 @@ html {
 .wrapper{
     display: grid;
     grid-template-columns: 2fr 4fr;
-    grid-template-rows: minmax(10%, 60px) 1fr minmax(5%,40px);
+    grid-template-rows: 10% 1fr 5%;
     column-gap: 5vw;
 
 }
