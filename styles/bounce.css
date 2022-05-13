@@ -22,16 +22,5 @@ html, body {
   
     color: transparent;
     text-shadow: 0 0 4px white;
-    grid-column: 1/2;
-    grid-row-start: 1;
   }
-
-  canvas{
-      grid-row-start: 2;
-      grid-column-start: 1;
-  }
-  .wrapper{
-      display:grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 10fr;
-  }
+  
