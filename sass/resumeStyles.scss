@@ -1,0 +1,135 @@
+html {
+    font-family: Lato, sans-serif;
+    background-color: black;
+    text-size-adjust: 25px;
+    background-attachment: fixed;
+}
+
+
+.wrapper {
+    display: flex;
+}
+
+.main {
+    width: 60%;
+    background-color: white;
+    padding: 2%;
+    align-content: center;
+}
+
+.header {
+    width: 100%;
+    position: sticky;
+    padding-top: 1%;
+    padding-bottom: 5px;
+    top: 0px;
+    background-color: white;
+}
+
+.fixedElement {
+    position: fixed;
+    width: inherit;
+}
+
+table {
+    clear: both;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
+}
+
+.bulletText {
+    display: list-item;
+}
+
+.subtitle {
+    font-weight: bold;
+    padding: 20px 5px 5px 5px;
+    clear: both;
+}
+
+#MyName,
+h2 {
+    text-align: center;
+    text-emphasis: 1;
+    font-weight: bold;
+    word-wrap: break-word;
+    flex-grow: 1;
+}
+
+.outerList {
+    list-style: none;
+    text-align: left;
+}
+
+#UNBList,
+#schoolList {
+    list-style: circle;
+    text-align: left;
+}
+
+#UNBList,
+#startList {
+    float: left;
+}
+
+#startSchool {
+    clear: both;
+}
+
+#schoolList,
+#startSchool {
+    float: left;
+}
+
+#startCS1303,
+#cs1303 {
+    float: left;
+}
+
+#cakePic {
+    visibility: hidden;
+    list-style: none;
+    width: 100%;
+    border: dashed #391ed1;
+    cursor: pointer;
+    position: sticky;
+    bottom: 30px;
+}
+
+#baking {
+    cursor: pointer;
+}
+
+
+.tableHeader,
+td {
+    text-align: left;
+    vertical-align: top;
+
+}
+
+ul {
+    margin-top: 0;
+}
+
+#MyName {
+    position: sticky;
+    top: 30px;
+    background-color: aquamarine;
+    vertical-align: center;
+}
+
+.degreeHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+button {
+    margin-left: 25px;
+}

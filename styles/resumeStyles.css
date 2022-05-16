@@ -1,115 +1,127 @@
 html {
-    font-family:  Lato, sans-serif;
-    background-color: black;
-    text-size-adjust: 25px;
-    background-attachment: fixed;
-}
+  font-family: Lato, sans-serif;
+  background-color: black;
+  -webkit-text-size-adjust: 25px;
+     -moz-text-size-adjust: 25px;
+      -ms-text-size-adjust: 25px;
+          text-size-adjust: 25px;
+  background-attachment: fixed; }
 
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
-.wrapper{
-    display: flex;
-}
-.main{
-    width: 60%;
-    background-color: white;
-    padding: 2%;
-    align-content: center;
-}
-.header{
-    width: 100%;
-    position: sticky;
-    padding-top: 1%;
-    padding-bottom: 5px;
-    top:0px;
-    background-color: white;
-}
-.fixedElement{
-    position: fixed;
-    width: inherit;
-}
-table{
-    clear:both;
-}
+.main {
+  width: 60%;
+  background-color: white;
+  padding: 2%;
+  -ms-flex-line-pack: center;
+      align-content: center; }
+
+.header {
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  padding-top: 1%;
+  padding-bottom: 5px;
+  top: 0px;
+  background-color: white; }
+
+.fixedElement {
+  position: fixed;
+  width: inherit; }
+
+table {
+  clear: both; }
 
 pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    text-align: justify;
-  }
-.bulletText{
-    display: list-item;
-}
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify; }
+
+.bulletText {
+  display: list-item; }
+
 .subtitle {
-    font-weight: bold;
-    padding: 20px 5px 5px 5px;
-    clear: both;
-}
+  font-weight: bold;
+  padding: 20px 5px 5px 5px;
+  clear: both; }
 
 #MyName,
 h2 {
-    text-align: center;
-    text-emphasis: 1;
-    font-weight: bold;
-    word-wrap: break-word;
-}
+  text-align: center;
+  -webkit-text-emphasis: 1;
+          text-emphasis: 1;
+  font-weight: bold;
+  word-wrap: break-word;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
 
 .outerList {
-    list-style: none;
-    text-align: left;
-}
+  list-style: none;
+  text-align: left; }
 
 #UNBList,
 #schoolList {
-    list-style: circle;
-    text-align: left;
-}
+  list-style: circle;
+  text-align: left; }
 
 #UNBList,
 #startList {
-    float: left;
-}
+  float: left; }
 
 #startSchool {
-    clear: both;
-}
+  clear: both; }
 
 #schoolList,
 #startSchool {
-    float: left;
-}
+  float: left; }
 
 #startCS1303,
 #cs1303 {
-    float: left;
-}
+  float: left; }
 
 #cakePic {
-    visibility: hidden;
-    list-style: none;
-    width: 100%;
-    border: dashed #391ed1;
-    cursor: pointer;
-    position: sticky;
-    bottom: 30px;
-}
+  visibility: hidden;
+  list-style: none;
+  width: 100%;
+  border: dashed #391ed1;
+  cursor: pointer;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 30px; }
 
 #baking {
-    cursor: pointer;
-}
+  cursor: pointer; }
 
+.tableHeader,
+td {
+  text-align: left;
+  vertical-align: top; }
 
-.tableHeader,td{
-    text-align: left;
-    vertical-align: top;
-    
-}
-ul{
-    margin-top: 0;
-}
+ul {
+  margin-top: 0; }
 
-#MyName{
-    position: sticky;
-    top: 30px;
-    background-color: aquamarine;
-    vertical-align: center;
-}
+#MyName {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30px;
+  background-color: aquamarine;
+  vertical-align: center; }
+
+.degreeHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+button {
+  margin-left: 25px; }
+/*# sourceMappingURL=resumeStyles.css.map */

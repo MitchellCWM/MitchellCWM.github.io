@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapquest example</title>
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js" defer></script>
+  <script src="../scripts/mapQuest.js" defer></script>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+  <link href="../styles/mapQuest.css" rel="stylesheet">
+
+  <!--Search Bar-->
+  <script src="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <h1>MapQuest.html</h1>
+    </div>
+    <h6>Requires a local host</h6>
+    <div class="searchContainer">
+      <input type="search" id="place-search-input" placeholder="Start Searching..." />
+      <button id="searchButton">Search</button>
+    </div>
+
+    <div id="map"></div>
+  </div>
+</body>
+
+</html>
