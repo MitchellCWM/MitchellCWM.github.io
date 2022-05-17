@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html theme="blackAndWhite">
 
 <head>
     <meta charset="utf-8">
@@ -9,9 +9,9 @@
     <title>Mitchell's Resume</title>
 
     <script src="https://kit.fontawesome.com/d485f12393.js" crossorigin="anonymous"></script>
-    <link href="styles/resumeStyles.css" rel="stylesheet">
     <link href="styles/resumeNavigation.css" rel="stylesheet">
     <link href="styles/resumeMobile.css" rel="stylesheet">
+    <link href="styles/resumeStyles.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;700&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kristi&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="body">
     <div class="wrapper">
         <div class="sideBar">
             <div class="fixedElement">
@@ -46,12 +46,13 @@
         </div>
         <div class="main">
             <div class="header">
-                <h1 id="MyName"> Mitchell MacDonald</h1>
+                <h1 class="myName" id="MyName"> Mitchell MacDonald</h1>
             </div>
             <div class="degreeHeader">
                 <h2> Faculty of Software Engineering</h2>
-                <button class="highContrastTheme">B&W Theme</button>
-                <button class="Rust">Rust Theme</button>
+                <button class="ThemeButton" theme="blackAndWhite">B&W Theme</button>
+                <button class="ThemeButton" theme="deepBlue">Deep Blue Theme</button>
+                <button class="ThemeButton" theme="RosettesAndCream">Rosette</button>
             </div>
             <p class="subtitle"> Education</p>
             <table>

@@ -1,36 +1,36 @@
 let menuOpen = false;
 
-getProgrammingSkillsBoldEle = function(){
+getProgrammingSkillsBoldEle = function () {
     let temp = document.getElementsByTagName('strong');
-    for(let i = 0; i < temp.length; i++){
-        if(temp[i].textContent === "Programming Skills: "){
+    for (let i = 0; i < temp.length; i++) {
+        if (temp[i].textContent === "Programming Skills: ") {
             return temp[i];
         }
     }
     return null;
 }
 
-updateHTMLCss = function(newStyle){
+updateHTMLCss = function (newStyle) {
     let temp = document.querySelector('html');
     tempStyle = temp.getAttribute('style');
     console.log(tempStyle);
     temp.setAttribute('style', tempStyle + ';\n' + newStyle);
 }
 
-setSillyFont = function(){
+setSillyFont = function () {
     updateHTMLCss('font-family: \'Kristi\', cursive');
 }
 
-openMenu = function(){
+openMenu = function () {
     nav.style.visibility = "visible";
     header.style.visibility = "hidden";
     stickyEle.style.visibility = "visible";
     sandvich.style.visibility = "hidden";
-    
+
     menuOpen = true;
 }
 
-closeMenu = function(){
+closeMenu = function () {
     nav.style.visibility = "hidden";
     header.style.visibility = "visible";
     stickyEle.style.visibility = "hidden";
@@ -49,31 +49,33 @@ let myName = document.getElementById('MyName');
 let date = document.getElementById('hiddenBackgroundPhoto');
 
 let award = document.getElementById('addTextHere');
+let htmlDoc = document.querySelector('html');
 
-bakingText.onclick = () =>{
+
+bakingText.onclick = () => {
     cake.setAttribute('style', 'visibility:visible');
     cake.setCss
 }
-cake.onclick = function(){
+cake.onclick = function () {
     cake.setAttribute('style', 'visibility:hidden');
 }
 
-date.onclick = function(){
+date.onclick = function () {
     updateHTMLCss('background-image: url(\'images/landscape.jpeg\')');
 }
 
 
-programmingSkillsBold.onmouseover = function(){
+programmingSkillsBold.onmouseover = function () {
     programmingSkillsText.textContent = 'Java, C, Racket, JavaScript, Python, MatLab, Selenium, HTML, CSS';
 }
-programmingSkillsBold.onmouseleave = function(){
+programmingSkillsBold.onmouseleave = function () {
     programmingSkillsText.textContent = 'Java, C, Racket, JavaScript, Python, MatLab, Selenium';
 }
 
 
 myName.addEventListener('click', setSillyFont);
 
-award.onclick = function(){
+award.onclick = function () {
     let newAward = prompt("Add new awards");
     let newListItem = document.createElement("li");
     newListItem.textContent = newAward;
@@ -97,18 +99,39 @@ let header = document.getElementsByClassName("header");
 header = header[0];
 
 
-sandvich.onclick = function() {
-   openMenu();
+sandvich.onclick = function () {
+    openMenu();
 }
 
 let main = document.getElementsByClassName("main");
 main = main[0];
 
-main.onclick = function(){
-    if(menuOpen){
+main.onclick = function () {
+    if (menuOpen) {
         closeMenu();
     }
-    
+
 
 }
 
+function updateTheme(elementIn) {
+
+    let element = elementIn;
+    function InnerFunction() {
+        let newTheme = element.getAttribute('theme');
+        htmlDoc.setAttribute('theme', newTheme);
+    }
+    return InnerFunction
+}
+
+
+let themeButtons = document.getElementsByClassName('ThemeButton');
+
+for (let i = 0; i < themeButtons.length; i++) {
+    themeButtons[i].onclick = updateTheme(themeButtons[i]);
+}
+
+/*
+let blackThemeButton = document.getElementsByClassName('ThemeButton-BW')[0];
+let deepBlueThemeButton = document.getElementsByClassName('ThemeButton-DeepBlue')[0];
+*/

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../themes/RosettesAndCreamTheme.scss"
+    ],
+    "names": [],
+    "file": "RosettesAndCreamTheme.css"
+}

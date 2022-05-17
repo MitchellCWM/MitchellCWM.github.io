@@ -1,0 +1,32 @@
+$theme-DeepBlue: (
+
+    name: deepBlue,
+
+    innerMap:(
+        body: (
+            background-color: #050A30,
+            color: #050A30
+        ),
+
+        main: (
+            background-color: #7EC8E3,
+            color : #050A30
+        ),
+
+        myName :(
+            background-color: #0000FF,
+            color: #7EC8E3
+        ),
+
+
+        navigationPane :(
+            background-color: #7EC8E3,
+            color: #050A30
+        ),
+
+        ThemeButton:(
+            background-color: #050A30,
+            color: #7EC8E3
+        )
+    )
+);

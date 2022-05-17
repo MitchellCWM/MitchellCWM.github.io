@@ -1,6 +1,5 @@
 html {
   font-family: Lato, sans-serif;
-  background-color: black;
   -webkit-text-size-adjust: 25px;
      -moz-text-size-adjust: 25px;
       -ms-text-size-adjust: 25px;
@@ -19,14 +18,14 @@ html {
   -ms-flex-line-pack: center;
       align-content: center; }
 
-.header {
+body .header {
   width: 100%;
   position: -webkit-sticky;
   position: sticky;
   padding-top: 1%;
   padding-bottom: 5px;
   top: 0px;
-  background-color: white; }
+  background-color: inherit; }
 
 .fixedElement {
   position: fixed;
@@ -48,16 +47,16 @@ pre {
   padding: 20px 5px 5px 5px;
   clear: both; }
 
-#MyName,
+.myName,
 h2 {
-  text-align: center;
   -webkit-text-emphasis: 1;
           text-emphasis: 1;
   font-weight: bold;
   word-wrap: break-word;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
-          flex-grow: 1; }
+          flex-grow: 1;
+  text-align: right; }
 
 .outerList {
   list-style: none;
@@ -104,12 +103,13 @@ td {
 ul {
   margin-top: 0; }
 
-#MyName {
+.myName {
   position: -webkit-sticky;
   position: sticky;
   top: 30px;
   background-color: aquamarine;
-  vertical-align: center; }
+  vertical-align: center;
+  text-align: center; }
 
 .degreeHeader {
   display: -webkit-box;
@@ -124,4 +124,73 @@ ul {
 
 button {
   margin-left: 25px; }
+
+html[theme=deepBlue] .body {
+  background-color: #050A30;
+  color: #050A30; }
+
+html[theme=deepBlue] .main {
+  background-color: #7EC8E3;
+  color: #050A30; }
+
+html[theme=deepBlue] .myName {
+  background-color: #0000FF;
+  color: #7EC8E3; }
+
+html[theme=deepBlue] .navigationPane {
+  background-color: #7EC8E3;
+  color: #050A30; }
+
+html[theme=deepBlue] .ThemeButton {
+  background-color: #050A30;
+  color: #7EC8E3; }
+
+html[theme=deepBlue] .header {
+  background-color: inherit; }
+
+html[theme=blackAndWhite] .body {
+  background-color: #000000;
+  color: #000000; }
+
+html[theme=blackAndWhite] .main {
+  background-color: #ffffff;
+  color: #000000; }
+
+html[theme=blackAndWhite] .myName {
+  background-color: #7fffd4;
+  color: #000000; }
+
+html[theme=blackAndWhite] .navigationPane {
+  background-color: #adff2f;
+  color: #472E2E; }
+
+html[theme=blackAndWhite] .ThemeButton {
+  background-color: #000000;
+  color: #ffffff; }
+
+html[theme=blackAndWhite] .header {
+  background-color: inherit; }
+
+html[theme=RosettesAndCream] .body {
+  background-color: #EF7C8E;
+  color: #D8A7B1; }
+
+html[theme=RosettesAndCream] .main {
+  background-color: #ffffff;
+  color: #D8A7B1; }
+
+html[theme=RosettesAndCream] .myName {
+  background-color: #B6E2D3;
+  color: #D8A7B1; }
+
+html[theme=RosettesAndCream] .navigationPane {
+  background-color: #FAE8E0;
+  color: #472E2E; }
+
+html[theme=RosettesAndCream] .ThemeButton {
+  background-color: #EF7C8E;
+  color: #FAE8E0; }
+
+html[theme=RosettesAndCream] .header {
+  background-color: inherit; }
 /*# sourceMappingURL=resumeStyles.css.map */
