@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "outFile": "./scripts/bouncer.js", //compiles the code into one file =)
+      "allowJs": true,
+      "watch": true,
+      "target": "esnext"
+    },
+    "include": ["./typeScript/**/*"]
+  }

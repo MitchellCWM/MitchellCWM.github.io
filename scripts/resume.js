@@ -61,7 +61,8 @@ cake.onclick = function () {
 }
 
 date.onclick = function () {
-    updateHTMLCss('background-image: url(\'images/landscape.jpeg\')');
+    let body = document.querySelector('body');
+    body.style.backgroundImage = 'url(\'images/landscape.jpeg\')';
 }
 
 
@@ -110,8 +111,6 @@ main.onclick = function () {
     if (menuOpen) {
         closeMenu();
     }
-
-
 }
 
 function updateTheme(elementIn) {
@@ -130,8 +129,3 @@ let themeButtons = document.getElementsByClassName('ThemeButton');
 for (let i = 0; i < themeButtons.length; i++) {
     themeButtons[i].onclick = updateTheme(themeButtons[i]);
 }
-
-/*
-let blackThemeButton = document.getElementsByClassName('ThemeButton-BW')[0];
-let deepBlueThemeButton = document.getElementsByClassName('ThemeButton-DeepBlue')[0];
-*/

@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "outDir": "./scripts",
+      "allowJs": true,
+      "watch": true,
+      "target": "es5"
+    },
+    "include": ["./typeScript/**/*"]
+  }
