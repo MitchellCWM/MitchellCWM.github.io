@@ -54,7 +54,6 @@ html {
   -ms-grid-row-span: 3;
   grid-row: 2 / 5;
   height: 10%;
-  max-height: 175px;
   background-color: aquamarine; }
 
 .fixedElement {

@@ -1,37 +1,180 @@
-html {
-    font-size: 10px; /* px means "pixels": the base font size is now 10 pixels high  */
-    font-family: "Open Sans", sans-serif; /* this should be the rest of the output you got from Google fonts */
-  }
-  h1{
-      font-size: 60px;
-      text-align: center;
-  }
-  p,l1,#testId{
-      font-size: 16px;
-      line-height: 2;
-      letter-spacing: 1px;
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%; }
 
-  }
+canvas {
+  width: 100%;
+  height: 100%; }
 
-  html {
-    background-color: #72496f;
-  }
+div[class^=canvasContainer] {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  div[class^=canvasContainer] > img {
+    top: 0px;
+    position: fixed;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: -10; }
 
-  body {
-    width: 600px;
-    margin: 0 auto; /*The space around the border*/
-    background-color: #FF9500;
-    padding: 0 20px 20px 20px; /*space around the text (0px at the top, 20 to the right, bottom and left*/
-    border: 5px solid black; /*creates a solid line around the text*/
-  }
+.menuContainer {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-top: 5%;
+  width: 40%;
+  height: 85%;
+  background-color: antiquewhite;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center; }
 
-  
-  h1 {
-    margin: 0;
-    padding: 0px 0;
-    color: #00539F;
-    text-shadow: 3px 3px 1px black;
-    border: 1px solid black;
-  }
+.headerBar {
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .headerBar > * {
+    font-family: fantasy;
+    font-size: 700%;
+    margin: 0; }
 
-  
+.buttonBar {
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+  .buttonBar button {
+    width: 40%;
+    height: 50%; }
+
+.imageBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 95%;
+  height: 60%;
+  background-color: white;
+  margin-left: 2.5%;
+  margin-right: 2.5%; }
+
+.imageContainer {
+  width: 40%;
+  height: 90%; }
+
+img {
+  width: 100%;
+  height: 100%; }
+
+#wasdContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  #wasdContainer > div {
+    width: 100%;
+    height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    #wasdContainer > div:first-child {
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end; }
+    #wasdContainer > div:last-child {
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start; }
+  #wasdContainer button[class^=keyBoardButton] {
+    width: 4vw;
+    height: 4vw;
+    margin: 4%;
+    -webkit-box-shadow: 5px 9px 2px 5px;
+            box-shadow: 5px 9px 2px 5px;
+    border: 3px black solid;
+    position: relative;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    font-size: larger;
+    font-weight: bolder; }
+    #wasdContainer button[class^=keyBoardButton]:hover {
+      -webkit-box-shadow: 2px 6px 2px 2px;
+              box-shadow: 2px 6px 2px 2px;
+      top: 3px;
+      left: 3px; }
+  #wasdContainer button[class$=--active] {
+    -webkit-box-shadow: 2px 6px 2px 2px;
+            box-shadow: 2px 6px 2px 2px;
+    top: 3px;
+    left: 3px; }
+
+.highScoreHeader {
+  position: fixed;
+  top: 3px;
+  left: 15px;
+  color: white; }
+/*# sourceMappingURL=style.css.map */

@@ -105,6 +105,8 @@ function getAngle(x, y, x2, y2) {
     else if (xDif < 0 && yDif > 0) {
         angle = -angle + Math.PI;
     }
+    else {
+    }
     return angle;
 }
 function degToRad(degrees) {
@@ -225,7 +227,7 @@ let player;
 let bots = [];
 let beams = [];
 let CONSTANTBOTCOUNTER = 0;
-let CONSTANTBOTCOUNTERLIMIT = 250;
+let CONSTANTBOTCOUNTERLIMIT = 250 + 100000;
 let CONSTANTBASESPEEDMULTI = 3;
 let botCounter;
 let botCounterLimit;
@@ -311,12 +313,13 @@ function drawAngled() {
     ctx.beginPath();
     ctx.moveTo(player.x, player.y);
     let angle = getAngle(mouseX, mouseY, player.x, player.y);
-    ctx.arc(player.x, player.y, 2 * length, angle, angle, true);
+    ctx.arc(player.x, player.y, 2 * length, angle, angle, false);
     ctx.lineWidth = 10;
     ctx.stroke();
 }
 function getMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
+    console.log(rect);
     return {
         x: evt.clientX - rect.left,
         y: evt.clientY - rect.top
@@ -433,14 +436,13 @@ function load() {
     //adding score
     let scoreEle = document.createElement('h3');
     scoreEle.setAttribute('class', 'highScoreHeader');
-    scoreEle.textContent = 'hello';
+    container.appendChild(scoreEle);
     //creating canvas
     let canvas = document.createElement('canvas');
     canvas.width = width;
     canvas.height = height;
     ctx = canvas.getContext('2d');
     container.appendChild(canvas);
-    container.appendChild(scoreEle);
     ctx.fillStyle = 'rbg(0,0,0)';
     ctx.fillRect(0, 0, width, height);
     frame();

@@ -128,9 +128,10 @@ function getAngle(x:number,y:number,x2, y2){
     else if(xDif < 0 && yDif > 0){
         angle = -angle + Math.PI;
     }
+    else{
+    }
     return angle;
 }
-
 
 
 function degToRad(degrees) {
@@ -140,8 +141,6 @@ function degToRad(degrees) {
 function radToDeg(rad) {
     return rad * 180/Math.PI;
 }
-
-
 
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + (min);
