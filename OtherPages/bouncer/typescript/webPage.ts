@@ -9,7 +9,7 @@ let dBtn: HTMLButtonElement = document.querySelector('#d');
 window.addEventListener('load', buttonAnimation);
 let buttonLocation: string = 'w';
 let animationFinished = false;
-
+let isTheAnitmationAlreadyCanceled = false;
 async function buttonAnimation() {
     animationFinished = false;
 
@@ -57,25 +57,18 @@ function resetButton(elementIn: HTMLButtonElement) {
     }
 }
 
-
 window.addEventListener('keydown',function(e:KeyboardEvent){
-    let keyDown = e.key;
-    let button:HTMLButtonElement = this.document.querySelector(`#${keyDown}`);
-    if(button){
-        activateButton(button);
-    }
-});
-
-window.addEventListener('keydown',function(e:KeyboardEvent){
+    isTheAnitmationAlreadyCanceled = true;
     let keyDown = e.key;
     let button:HTMLButtonElement = this.document.querySelector(`#${keyDown}`);
     if(button){
         cancelButtonAnimation();
-        button.setAttribute('class', 'keyBoardButton--active');       
+        button.setAttribute('class', 'keyBoardButton--active');      
     }
 });
 
 window.addEventListener('keyup',function(e:KeyboardEvent){
+    isTheAnitmationAlreadyCanceled = false;
     let keyUp = e.key;
     let button:HTMLButtonElement = this.document.querySelector(`#${keyUp}`);
     if(button){
@@ -95,7 +88,7 @@ function cancelButtonAnimation(){
 
 function activateButtonAnimation(){
     buttonLocation = 'w';
-    if (animationFinished) {
+    if (animationFinished && !isTheAnitmationAlreadyCanceled) {
         buttonAnimation();
     }
 }
@@ -111,13 +104,11 @@ startButton.addEventListener('click',function(e){
 
 function end(){
     let canvasContainer = document.querySelector('.canvasContainer');
-    let backgroundImage:HTMLImageElement = document.querySelector('#menuBackground');
-    backgroundImage.style.visibility = 'visible';
     let canvas = document.querySelector('canvas');
     canvas.remove();
     let scoreHeader = document.querySelector('.highScoreHeader');
     scoreHeader.remove();
-    canvasContainer.appendChild(menuContainer);
+    highScoreMenu();
 }
 
 
@@ -125,7 +116,6 @@ function updateScore(numberIn){
     let scoreString = convertNumberToString(numberIn,10);
     let scoreHeader = document.querySelector('.highScoreHeader');
     scoreHeader.textContent = scoreString;
-    console.log('here');
 }
 function convertNumberToString(numberIn, digits){
     let numberString = numberIn.toString();
@@ -135,4 +125,17 @@ function convertNumberToString(numberIn, digits){
     }
     tempString += numberString;
     return tempString;
+}
+
+function goHome(){
+    let scoreMenu = document.querySelector('.scoreMenu');
+    scoreMenu.remove();
+    let canvasContainer = document.querySelector('.canvasContainer');
+    canvasContainer.appendChild(menuContainer);
+    enableSpaceBackground();
+}
+
+function enableSpaceBackground(){
+    let backgroundImage:HTMLImageElement = document.querySelector('#menuBackground');
+    backgroundImage.style.visibility = 'visible';
 }

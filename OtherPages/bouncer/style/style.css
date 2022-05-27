@@ -29,6 +29,7 @@ div[class^=canvasContainer] > img {
   width: 40%;
   height: 85%;
   background-color: antiquewhite;
+  color: darkorchid;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -43,7 +44,7 @@ div[class^=canvasContainer] > img {
   justify-content: center;
 }
 .headerBar > * {
-  font-family: fantasy;
+  font-family: "Cantarell", sans-serif;
   font-size: 700%;
   margin: 0;
 }
@@ -128,6 +129,7 @@ img {
   top: 3px;
   left: 15px;
   color: white;
+  user-select: none;
 }
 
 .test {

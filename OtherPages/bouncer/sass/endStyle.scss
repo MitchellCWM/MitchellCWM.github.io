@@ -1,0 +1,95 @@
+@use 'style';
+
+
+@mixin fancyInputDiv {
+
+    display:flex;
+    flex-direction: row;
+    width: 83%;
+    height: 20%;
+    border: 1px black solid;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2%;
+    border-radius: 13%;
+    border-top-left-radius: 0%;
+    & input {
+        background-color: inherit;
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        cursor: default;
+        font-size: 200%;
+        align-self: flex-end;
+    }
+    & label{
+        overflow: visible;
+        z-index: 1;
+    }
+
+    &[type=shrink-text],&:focus-within,&:focus, &:focus-visible, &:active, &:checked{
+        
+        & label{
+            transition: all .2s;
+            font-size: smaller;
+            
+            width: 1%;
+            margin-bottom: 10%;
+        }
+        & input{
+            cursor: text;
+        }
+    }
+}
+
+.scoreMenu {
+    align-self: center;
+    background-color: style.$menuColor;
+    width: style.$menuWidth;
+    height: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.scoreMenu--scoreDisplay {
+    font-size: 550%;
+    font-weight: bold;
+    font-family: style.$menuFont;
+    color: style.$menuFontColor;
+    margin: 0;
+    margin-bottom: 5%;
+}
+
+.scoreMenu--scoreName {
+    
+}
+
+.scoreMenu--label {
+    
+}
+
+div[class^=fancyInput]{
+    @include fancyInputDiv();
+}
+
+.scoreMenu--buttonBar{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10%;
+    width: 100%;
+    height: 18%;
+    & > *{
+        width: 30%;
+        height: 100%;
+        background-color: black;
+        color: style.$menuFontColor;
+        font-size: 150%;
+    }
+}

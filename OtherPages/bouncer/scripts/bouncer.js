@@ -217,7 +217,7 @@ function getRandomColor() {
 //let canvas = document.querySelector('canvas');
 let container = document.querySelector('.canvasContainer');
 let width = window.innerWidth;
-let height = window.innerHeight * .9;
+let height = window.innerHeight;
 let fillStyle = 'rgba(0,0,0,0.3)';
 let mouseX = 0;
 let mouseY = 0;
@@ -227,7 +227,7 @@ let player;
 let bots = [];
 let beams = [];
 let CONSTANTBOTCOUNTER = 0;
-let CONSTANTBOTCOUNTERLIMIT = 250 + 100000;
+let CONSTANTBOTCOUNTERLIMIT = 250;
 let CONSTANTBASESPEEDMULTI = 3;
 let botCounter;
 let botCounterLimit;
@@ -248,31 +248,32 @@ async function delay(timeDelay) {
 }
 async function frame() {
     let rate = 15;
-    while (true) {
-        //after delay to this
-        let promise = await delay(rate);
-        ctx.fillStyle = fillStyle;
-        ctx.fillRect(0, 0, width, height);
-        player.updateSpeed(keyMap);
-        player.updatePosition();
-        updateBots();
-        updateBeams();
-        player.draw(ctx);
-        drawAngled();
-        if (botCounter < botCounterLimit) {
-            botCounter += 5;
-        }
-        else {
-            botCounter = 0;
-            botCounterLimit--;
-            botBaseSpeedMulit += 0.1;
-            createBot();
-        }
-        checkForHits();
-        removeOutOfBounds();
-        if (checkForPlayerCollision()) {
-            end();
-        }
+    //after delay to this
+    let promise = await delay(rate);
+    ctx.fillStyle = fillStyle;
+    ctx.fillRect(0, 0, width, height);
+    player.updateSpeed(keyMap);
+    player.updatePosition();
+    updateBots();
+    updateBeams();
+    player.draw(ctx);
+    drawAngled();
+    if (botCounter < botCounterLimit) {
+        botCounter += 5;
+    }
+    else {
+        botCounter = 0;
+        botCounterLimit--;
+        botBaseSpeedMulit += 0.1;
+        createBot();
+    }
+    checkForHits();
+    removeOutOfBounds();
+    if (checkForPlayerCollision()) {
+        end();
+    }
+    else {
+        frame();
     }
 }
 document.addEventListener('keydown', function (e) {
@@ -319,7 +320,6 @@ function drawAngled() {
 }
 function getMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
-    console.log(rect);
     return {
         x: evt.clientX - rect.left,
         y: evt.clientY - rect.top
@@ -372,7 +372,6 @@ function checkForHits() {
     for (let i = 0; i < beams.length; i++) {
         for (let j = 0; j < bots.length; j++) {
             if (beams[i].colision(bots[j])) {
-                console.log('hit');
                 beams.splice(i, 1);
                 bots.splice(j, 1);
                 i = -1;
@@ -434,9 +433,11 @@ function load() {
     let backgroundImage = document.querySelector('#menuBackground');
     backgroundImage.style.visibility = 'hidden';
     //adding score
+    currentScore = 0;
     let scoreEle = document.createElement('h3');
     scoreEle.setAttribute('class', 'highScoreHeader');
     container.appendChild(scoreEle);
+    updateScore(currentScore);
     //creating canvas
     let canvas = document.createElement('canvas');
     canvas.width = width;
@@ -459,6 +460,66 @@ function load() {
     botBaseSpeedMulit = CONSTANTBASESPEEDMULTI;
     beams = [];
 }
+function highScoreMenu() {
+    createScoreMenu();
+    enableSpaceBackground();
+}
+function createScoreMenu() {
+    let canvasContainer = document.querySelector('.canvasContainer');
+    let scoreMenu = document.createElement('div');
+    scoreMenu.setAttribute('class', 'scoreMenu');
+    canvasContainer.appendChild(scoreMenu);
+    console.log(canvasContainer);
+    createScoreMenuScore(scoreMenu);
+    createInputMenu(scoreMenu);
+    createScoreMenuButton(scoreMenu);
+}
+function createScoreMenuScore(elementIn) {
+    let scoreDisplay = document.createElement('h2');
+    scoreDisplay.setAttribute('class', 'scoreMenu--scoreDisplay');
+    scoreDisplay.textContent = convertNumberToString(currentScore, 10);
+    elementIn.appendChild(scoreDisplay);
+}
+function createInputMenu(elementIn) {
+    let nameInput = document.createElement('div');
+    let nameField = document.createElement('input');
+    let nameLabel = document.createElement('label');
+    nameInput.setAttribute('class', 'fancyInput--name');
+    nameField.setAttribute('type', 'text');
+    nameField.setAttribute('class', 'scoreMenu--scoreName');
+    nameField.setAttribute('id', 'scoreName');
+    nameField.addEventListener('keyup', shrinkText);
+    nameLabel.setAttribute('class', 'scoreMenu--label');
+    nameLabel.setAttribute('for', 'scoreName');
+    nameLabel.textContent = 'NAME:';
+    nameInput.appendChild(nameLabel);
+    nameInput.appendChild(nameField);
+    elementIn.appendChild(nameInput);
+}
+function createScoreMenuButton(elementIn) {
+    let buttonBar = document.createElement('div');
+    buttonBar.setAttribute('class', 'scoreMenu--buttonBar');
+    elementIn.appendChild(buttonBar);
+    let submitButton = document.createElement('button');
+    let homeButton = document.createElement('button');
+    homeButton.addEventListener('click', goHome);
+    submitButton.textContent = 'Submit';
+    homeButton.textContent = 'Home';
+    submitButton.setAttribute('class', 'scoreMenu--button');
+    homeButton.setAttribute('class', 'scoreMenu--button');
+    buttonBar.appendChild(submitButton);
+    buttonBar.appendChild(homeButton);
+}
+function shrinkText(e) {
+    let inputElement = document.querySelector('#scoreName');
+    let inputContainer = document.querySelector('.fancyInput--name');
+    if (inputElement.value != '') {
+        inputContainer.setAttribute('type', 'shrink-text');
+    }
+    else {
+        inputContainer.setAttribute('type', '');
+    }
+}
 let buttonContainer = document.querySelector('#wasdContainer');
 let menuContainer = document.querySelector('.menuContainer');
 let aBtn = document.querySelector('#a');
@@ -468,6 +529,7 @@ let dBtn = document.querySelector('#d');
 window.addEventListener('load', buttonAnimation);
 let buttonLocation = 'w';
 let animationFinished = false;
+let isTheAnitmationAlreadyCanceled = false;
 async function buttonAnimation() {
     animationFinished = false;
     let nextButtonLocation = buttonLocation;
@@ -518,13 +580,7 @@ function resetButton(elementIn) {
     }
 }
 window.addEventListener('keydown', function (e) {
-    let keyDown = e.key;
-    let button = this.document.querySelector(`#${keyDown}`);
-    if (button) {
-        activateButton(button);
-    }
-});
-window.addEventListener('keydown', function (e) {
+    isTheAnitmationAlreadyCanceled = true;
     let keyDown = e.key;
     let button = this.document.querySelector(`#${keyDown}`);
     if (button) {
@@ -533,6 +589,7 @@ window.addEventListener('keydown', function (e) {
     }
 });
 window.addEventListener('keyup', function (e) {
+    isTheAnitmationAlreadyCanceled = false;
     let keyUp = e.key;
     let button = this.document.querySelector(`#${keyUp}`);
     if (button) {
@@ -549,7 +606,7 @@ function cancelButtonAnimation() {
 }
 function activateButtonAnimation() {
     buttonLocation = 'w';
-    if (animationFinished) {
+    if (animationFinished && !isTheAnitmationAlreadyCanceled) {
         buttonAnimation();
     }
 }
@@ -560,19 +617,16 @@ startButton.addEventListener('click', function (e) {
 });
 function end() {
     let canvasContainer = document.querySelector('.canvasContainer');
-    let backgroundImage = document.querySelector('#menuBackground');
-    backgroundImage.style.visibility = 'visible';
     let canvas = document.querySelector('canvas');
     canvas.remove();
     let scoreHeader = document.querySelector('.highScoreHeader');
     scoreHeader.remove();
-    canvasContainer.appendChild(menuContainer);
+    highScoreMenu();
 }
 function updateScore(numberIn) {
     let scoreString = convertNumberToString(numberIn, 10);
     let scoreHeader = document.querySelector('.highScoreHeader');
     scoreHeader.textContent = scoreString;
-    console.log('here');
 }
 function convertNumberToString(numberIn, digits) {
     let numberString = numberIn.toString();
@@ -582,4 +636,15 @@ function convertNumberToString(numberIn, digits) {
     }
     tempString += numberString;
     return tempString;
+}
+function goHome() {
+    let scoreMenu = document.querySelector('.scoreMenu');
+    scoreMenu.remove();
+    let canvasContainer = document.querySelector('.canvasContainer');
+    canvasContainer.appendChild(menuContainer);
+    enableSpaceBackground();
+}
+function enableSpaceBackground() {
+    let backgroundImage = document.querySelector('#menuBackground');
+    backgroundImage.style.visibility = 'visible';
 }

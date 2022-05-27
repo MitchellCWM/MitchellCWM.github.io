@@ -1,7 +1,7 @@
 //let canvas = document.querySelector('canvas');
 let container = document.querySelector('.canvasContainer');
 let width = window.innerWidth;
-let height = window.innerHeight * .9;
+let height = window.innerHeight;
 let fillStyle = 'rgba(0,0,0,0.3)'
 
 let mouseX = 0;
@@ -15,7 +15,7 @@ let beams = [];
 
 
 let CONSTANTBOTCOUNTER = 0;
-let CONSTANTBOTCOUNTERLIMIT = 250+ 100000;
+let CONSTANTBOTCOUNTERLIMIT = 250;
 let CONSTANTBASESPEEDMULTI = 3;
 let botCounter: number;
 let botCounterLimit: number;
@@ -43,40 +43,42 @@ async function delay(timeDelay: number): Promise<void> {
 
 async function frame() {
     let rate = 15;
-    while (true) {
-        //after delay to this
-        let promise = await delay(rate);
-        ctx.fillStyle = fillStyle;
-        ctx.fillRect(0, 0, width, height);
+    //after delay to this
+    let promise = await delay(rate);
+    ctx.fillStyle = fillStyle;
+    ctx.fillRect(0, 0, width, height);
 
-        player.updateSpeed(keyMap);
-        player.updatePosition();
+    player.updateSpeed(keyMap);
+    player.updatePosition();
 
-        updateBots();
-        updateBeams();
+    updateBots();
+    updateBeams();
 
-        player.draw(ctx);
-        drawAngled();
+    player.draw(ctx);
+    drawAngled();
 
 
-        if (botCounter < botCounterLimit) {
-            botCounter += 5;
-        }
-        else {
-            botCounter = 0;
-            botCounterLimit--;
-            botBaseSpeedMulit += 0.1
-            createBot();
-        }
-
-        checkForHits();
-
-        removeOutOfBounds();
-
-        if (checkForPlayerCollision()) {
-            end();
-        }
+    if (botCounter < botCounterLimit) {
+        botCounter += 5;
     }
+    else {
+        botCounter = 0;
+        botCounterLimit--;
+        botBaseSpeedMulit += 0.1
+        createBot();
+    }
+
+    checkForHits();
+
+    removeOutOfBounds();
+
+    if (checkForPlayerCollision()) {
+        end();
+    }
+    else {
+        frame();
+    }
+
 }
 
 document.addEventListener('keydown', function (e: KeyboardEvent) {
@@ -130,7 +132,6 @@ function drawAngled() {
 
 function getMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
-    console.log(rect);
     return {
         x: evt.clientX - rect.left,
         y: evt.clientY - rect.top
@@ -198,7 +199,6 @@ function checkForHits() {
     for (let i = 0; i < beams.length; i++) {
         for (let j = 0; j < bots.length; j++) {
             if (beams[i].colision(bots[j])) {
-                console.log('hit');
                 beams.splice(i, 1);
                 bots.splice(j, 1);
                 i = -1;
@@ -263,13 +263,15 @@ function checkForPlayerCollision() {
 function load() {
     //removing menu
     let container = document.querySelector('.canvasContainer');
-    let backgroundImage:HTMLImageElement = document.querySelector('#menuBackground');
+    let backgroundImage: HTMLImageElement = document.querySelector('#menuBackground');
     backgroundImage.style.visibility = 'hidden';
 
     //adding score
+    currentScore = 0;
     let scoreEle: HTMLElement = document.createElement('h3');
-    scoreEle.setAttribute('class','highScoreHeader');
+    scoreEle.setAttribute('class', 'highScoreHeader');
     container.appendChild(scoreEle);
+    updateScore(currentScore);
 
     //creating canvas
     let canvas = document.createElement('canvas');
@@ -277,7 +279,7 @@ function load() {
     canvas.height = height;
     ctx = canvas.getContext('2d');
     container.appendChild(canvas);
-    
+
     ctx.fillStyle = 'rbg(0,0,0)';
     ctx.fillRect(0, 0, width, height);
     frame();

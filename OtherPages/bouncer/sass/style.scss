@@ -1,3 +1,7 @@
+$menuWidth: 40%;
+$menuColor: antiquewhite;
+$menuFontColor: darkorchid;
+$menuFont: 'Cantarell', sans-serif;
 .wrapper{
     display:flex;
     flex-direction:column;
@@ -30,10 +34,10 @@ div[class^=canvasContainer]{
 .menuContainer{
     align-self: flex-start;
     margin-top: 5%;
-    width: 40%;
+    width: $menuWidth;
     height: 85%;
-    background-color: antiquewhite;
-
+    background-color: $menuColor;
+    color: $menuFontColor;
 
     display:flex;
     flex-direction: column;
@@ -50,7 +54,7 @@ div[class^=canvasContainer]{
     
 
     & > *{
-        font-family: fantasy;
+        font-family: $menuFont;
         font-size: 700%;
         margin: 0;
     }
@@ -147,6 +151,7 @@ img{
     top: 3px;
     left:15px;
     color: white;
+    user-select: none;
 }
 
 .test{
